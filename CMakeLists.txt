@@ -114,7 +114,16 @@ if("${isSystemDir}" STREQUAL "-1")
    set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib:${CMAKE_INSTALL_PREFIX}/lib/casadi")
 endif("${isSystemDir}" STREQUAL "-1")
 
+############################################################
+#################### Catkin Command ########################
+############################################################
 
+find_package(catkin REQUIRED)
+
+catkin_package(
+    INCLUDE_DIRS include include/qpOASES
+    LIBRARIES qpOASES
+)
 
 ############################################################
 #################### build and install #####################
